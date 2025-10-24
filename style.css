@@ -1,0 +1,236 @@
+:root {
+    --primary-color: #f072f7; 
+    --secondary-color: #6a994e; 
+    --text-dark: #333;
+    --text-light: #f4f4f4;
+    --bg-body: #fdf6e3; 
+    --bg-dark-transparent: rgba(56, 55, 55, 0.9); 
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--text-dark);
+    scroll-behavior: smooth;
+    background-color: var(--bg-body);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: var(--bg-dark-transparent);
+    padding: 18px 0; 
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav a {
+    color: var(--text-light);
+    margin: 0 25px;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+section {
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px 20px; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--text-light);
+    position: relative;
+}
+
+#section1, #section2, #section3, #section4 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("c12.jpg");
+    background-attachment: fixed;
+}
+
+section .overlay {
+    background: rgba(0, 0, 0, 0.65);
+    padding: 40px 60px;
+    border-radius: 15px;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--primary-color);
+}
+
+#section1 h1 {
+    font-size: 4.5rem;
+    color: var(--primary-color);
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#section2 h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-light);
+}
+
+#section3 h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 40px; 
+    margin-top: 40px;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    background: #fff; 
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+    color: var(--text-dark);
+    text-decoration: none;
+    width: 100%;
+    max-width: 350px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.product img {
+    width: 100%;      
+    height: 280px;
+    object-fit: cover; 
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.5s ease;
+}
+
+.product-info {
+    text-align: center;
+    width: 100%;
+}
+
+.product h3 {
+    margin: 0 0 5px;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    letter-spacing: 0.5px;
+}
+
+.product h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.product:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    background: var(--bg-body); 
+}
+
+.product:hover img {
+    transform: scale(1.05); 
+}
+
+#section4 h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+#section4 br {
+    display: none; 
+}
+
+.contact-details {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 20px 0;
+    color: var(--text-light);
+    list-style: none;
+    padding: 0;
+}
+
+.contact-details li {
+    margin: 15px 0;
+}
+
+.contact-details strong {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #222;
+    color: #ccc;
+    font-size: 0.9rem;
+    border-top: 3px solid var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    #section1 h1 {
+        font-size: 3rem;
+    }
+    
+    #section3 h2 {
+        font-size: 2.5rem;
+    }
+
+    .overlay {
+        padding: 30px;
+    }
+    
+    nav a {
+        margin: 0 10px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .grid {
+        gap: 20px;
+    }
+    
+    .product {
+        max-width: none;
+    }
+    
+    #section4 h2 {
+        font-size: 1.8rem;
+    }
+}
